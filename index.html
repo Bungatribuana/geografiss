@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-g">
+        <Mmeta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Desaku</title>
+            <link rel="stylesheet" href="assets/leaflet/leaflet.css">
+            <script src="assets/leaflet/leaflet.js"></script>
+            <script src="area-lekor.js"></script>
+            <script src="line-lekor.js"></script>
+</head>
+<body>
+    <div id="map" style="width: 600px; height: 400px;"></div>
+    <script>
+    
+        const map = L.map('map').setView([-8.733494,116.4263976], 13);
+    
+        const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+    var lekor = L.geoJSON([lekor], {
+		style: function (feature) {
+			return feature.properties && feature.properties.style;
+		}
+		
+	}).addTo(map);
+        </script>
+        </body>
+        </html>
+
+
